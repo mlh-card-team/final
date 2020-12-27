@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %} DECEMBER HOLIDAYS {% endblock %}
+
+{% block content %}
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Card maker</title>
+     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+</head>
+<style>
+
+     .head {
+          text-align: center;
+          font-size: 5vw;
+          font-family: 'Hammersmith One', sans-serif;
+     }
+     
+</style>
+
+<body>
+     <h1 class="head mt-8">DECEMBER HOLIDAYS</h1>
+
+     <section class="text-gray-600 body-font">
+          <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+               <div class="text-center lg:w-2/3 w-full">
+                    <h1 class="title-font lg:text-89xl text-89xl mb-4 font-medium text-gray-900">{% for post in posts %}
+<h2 style="font-size: 50pt">
+<a href="{{ post.get_absolute_url }}">
+{{ post.title }} </a>
+</h2></h1>
+                    <p style="font-size: 30pt" class="mb-8 leading-relaxed">
+{{ post.body|truncatewords:20|linebreaks }} {% endfor %}</p>
+               </div>
+          </div>
+     </section>
+{% include "pagination.html" with page=posts %}
+   {% endblock %}
+

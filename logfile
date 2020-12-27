@@ -1,0 +1,5 @@
+2020-12-27 01:19:47.728 WAT [30062] LOG:  starting PostgreSQL 13.1 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 12.0.0 (clang-1200.0.32.27), 64-bit
+2020-12-27 01:19:47.729 WAT [30062] LOG:  listening on IPv6 address "::1", port 5432
+2020-12-27 01:19:47.729 WAT [30062] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-12-27 01:19:47.731 WAT [30062] FATAL:  could not open lock file "/tmp/.s.PGSQL.5432.lock": Permission denied
+2020-12-27 01:19:47.732 WAT [30062] LOG:  database system is shut down

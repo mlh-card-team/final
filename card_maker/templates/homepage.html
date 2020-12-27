@@ -1,0 +1,303 @@
+{%extends 'base.html'%}
+{%block content%}
+  
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card-Maker</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Codystar">
+</head>
+
+<style>
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  overflow: hidden;
+}
+
+.nav-link{
+  font-family:'Hammersmith One', sans-serif;
+}
+
+.svg{
+  animation: updown 5s ease-in-out infinite;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-10%);
+  }
+
+  50% {
+    transform: translateY(10%);
+  }
+
+  100% {
+    transform: translateY(-10%);
+  }
+}
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #fff;
+  background-color: #9cf;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#6af), to(#bdf));
+  background-image: -webkit-linear-gradient(#6af, #bdf);
+  background-image: -moz-linear-gradient(#6af, #bdf);
+  background-image: linear-gradient(#6af, #bdf);
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+h1 {
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font: 10em "Codystar", sans-serif;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.snowflake {
+  position: absolute;
+  display: block;
+  position: absolute;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-image: -webkit-radial-gradient(
+    center,
+    circle farthest-corner,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-image: -moz-radial-gradient(
+    center,
+    circle farthest-corner,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-image: -ms-radial-gradient(
+    center,
+    circle farthest-corner,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-image: radial-gradient(
+    center,
+    circle farthest-corner,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+#snow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar{
+  background-color :lavender !important;
+  color: white;
+}
+</style>
+
+<body>
+
+<div id="snow"></div>
+
+  <section class="text-gray-600 body-font">
+
+    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+      <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left text-center">
+        
+  
+        <div class="flex w-full md:justify-start justify-center items-end">
+          <div class="relative mr-4 md:w-full lg:w-full xl:w-1/2 w-2/4 ml-10">
+            <label style="font-size:30pt; font-family:'Brush Script MT',cursive; height:100%">WELCOME TO THE HOLIDAY CARD MAKER SITE</label>
+    
+            <form action="{% url 'search'%}" method="post">
+
+            <input class="form-control me-2" type="text" id="hero-field" name="hero-field" class="w-full bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          </div>
+          <button type="submit" value="{{ form }}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Search</button>
+          </form>
+        </div>
+      </div>
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 svg">
+        <img class="object-cover object-center rounded" alt="hero" src="https://cdn.discordapp.com/attachments/792336494093139971/792429654354690058/svg.png">
+      </div>
+    </div>
+  </section>
+  
+</body>
+
+<script src="app.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+    crossorigin="anonymous"></script>
+
+  <!-- <img src="https://i.pinimg.com/originals/c9/54/1d/c9541d7c6820052fa053ec60a5ebeb97.jpg" ; align="right"; height="700"; width="800"> -->
+   <script>
+    var Snowflake = (function() {
+
+  var flakes;
+  var flakesTotal = 250;
+  var wind = 0;
+  var mouseX;
+  var mouseY;
+
+  function Snowflake(size, x, y, vx, vy) {
+    this.size = size;
+    this.x = x;
+    this.y = y;
+    this.vx = vx;
+    this.vy = vy;
+    this.hit = false;
+    this.melt = false;
+    this.div = document.createElement('div');
+    this.div.classList.add('snowflake');
+    this.div.style.width = this.size + 'px';
+    this.div.style.height = this.size + 'px';
+  }
+
+  Snowflake.prototype.move = function() {
+    if (this.hit) {
+      if (Math.random() > 0.995) this.melt = true;
+    } else {
+      this.x += this.vx + Math.min(Math.max(wind, -10), 10);
+      this.y += this.vy;
+    }
+
+    // Wrap the snowflake to within the bounds of the page
+    if (this.x > window.innerWidth + this.size) {
+      this.x -= window.innerWidth + this.size;
+    }
+
+    if (this.x < -this.size) {
+      this.x += window.innerWidth + this.size;
+    }
+
+    if (this.y > window.innerHeight + this.size) {
+      this.x = Math.random() * window.innerWidth;
+      this.y -= window.innerHeight + this.size * 2;
+      this.melt = false;
+    }
+
+    var dx = mouseX - this.x;
+    var dy = mouseY - this.y;
+    this.hit = !this.melt && this.y < mouseY && dx * dx + dy * dy < 2400;
+  };
+
+  Snowflake.prototype.draw = function() {
+    this.div.style.transform =
+    this.div.style.MozTransform =
+    this.div.style.webkitTransform =
+      'translate3d(' + this.x + 'px' + ',' + this.y + 'px,0)';
+  };
+
+  function update() {
+    for (var i = flakes.length; i--; ) {
+      var flake = flakes[i];
+      flake.move();
+      flake.draw();
+    }
+    requestAnimationFrame(update);
+  }
+
+  Snowflake.init = function(container) {
+    flakes = [];
+
+    for (var i = flakesTotal; i--; ) {
+      var size = (Math.random() + 0.2) * 12 + 1;
+      var flake = new Snowflake(
+        size,
+        Math.random() * window.innerWidth,
+        Math.random() * window.innerHeight,
+        Math.random() - 0.5,
+        size * 0.3
+      );
+      container.appendChild(flake.div);
+      flakes.push(flake);
+    }
+    
+    container.onmousemove = function(event) {
+      mouseX = event.clientX;
+      mouseY = event.clientY;
+      wind = (mouseX - window.innerWidth / 2) / window.innerWidth * 6;
+    };
+
+    container.ontouchstart = function(event) {
+      mouseX = event.targetTouches[0].clientX;
+      mouseY = event.targetTouches[0].clientY;
+      event.preventDefault();
+    };
+
+    window.ondeviceorientation = function(event) {
+      if (event) {
+        wind = event.gamma / 10;
+      }
+    };
+    
+    update();
+  };
+
+  return Snowflake;
+
+}());
+
+window.onload = function() {
+  setTimeout(function() {
+    Snowflake.init(document.getElementById('snow'));
+  }, 500);
+}
+
+
+Resources
+  </script>
+  </body>
+</html>
+{%endblock%}

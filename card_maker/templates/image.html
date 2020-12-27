@@ -1,0 +1,97 @@
+{% extends 'base.html'%}
+
+
+{%block title%}Holiday Cards{%endblock%}
+{%block content%}
+ 
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card maker</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<style>
+    .block {
+        background: transparent;
+        transition: 0.3s ease-in-out;
+    }
+
+    .block:hover {
+        cursor: pointer;
+        opacity: 1;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    
+</style>
+
+<body>
+
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-wrap -m-4">
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://i.pinimg.com/564x/51/29/b5/5129b5692156d4dabe59e03005295a61.jpg">
+                         
+                    </a>
+                     		<h1> <a class="nav-link" href="{% url 'card_maker:christmas_cards' %}">Christmas cards</a>  </h1>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://i.pinimg.com/236x/17/51/8f/17518f067366246b4e5959f4cb1b41c6.jpg">
+                    </a>
+                    <h1> <a class="nav-link" href="{% url 'card_maker:hanukkah_cards' %}">Hanukkah cards</a>  </h1>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://i.pinimg.com/236x/0d/fc/4e/0dfc4e47cdd13aed6dd0993f1e85bdf7.jpg">
+                    </a>
+                    <h1> <a class="nav-link" href="{% url 'card_maker:kwanzaa_cards' %}">Kwanzaa Cards</a>  </h1>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://i.pinimg.com/236x/fc/db/72/fcdb725db9162d1d6078d9b9d13f252d.jpg">
+                    </a>
+                    <h1> <a class="nav-link" href="{% url 'card_maker:boxing_day_cards' %}">Boxing Day Cards</a>  </h1>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://i.pinimg.com/236x/50/1f/fa/501ffaad6142091a025758d49fcfdb1b.jpg">
+                    </a>
+                    <h1> <a class="nav-link" href="{% url 'card_maker:omisoka_cards' %}">Ōmisoka cards</a>  </h1>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://i.pinimg.com/236x/e4/a9/e5/e4a9e5ead69ff6a8de5a3a83aedbfd56.jpg">
+                    </a>
+                    <h1> <a class="nav-link" href="{% url 'card_maker:saint_nickolas_day_cards' %}">Saint Nickolas Day Cards</a>  </h1>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://i.pinimg.com/236x/0a/12/32/0a12327520d884879430e9cea1d740cb.jpg" >
+                         
+                    </a>
+                    <h1> <a class="nav-link" href="{% url 'card_maker:winter_solstice_cards' %}">Winter Solstice cards</a>  </h1>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                            src="https://i.pinimg.com/236x/f7/55/ed/f755ed871e646580911c087e977f1468.jpg">
+                    </a>
+                    
+                    <h1> <a class="nav-link" href="{% url 'card_maker:mardi_gras_cards' %}">Mardi Gras Cards</a>  </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+{%endblock%}
