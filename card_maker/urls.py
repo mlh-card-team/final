@@ -5,7 +5,7 @@ app_name = 'card_maker'
 
 
 urlpatterns = [
-path ('homepage',views.homepage, name='homepage'),
+path ('',views.homepage, name='homepage'),
 path ('holidays',views.post_list, name='holidays'),
 path('<int:year>/<int:month>/<int:day>/<slug:post>/',
 views.post_detail, name='post_detail'),
