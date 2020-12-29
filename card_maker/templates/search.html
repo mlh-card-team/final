@@ -1,8 +1,8 @@
-{% extends "base.html" %}
+   {% extends 'base.html' %}
    {% block title %}Search{% endblock %}
    {% block content %}
-     {% if query %}
-       <h1>Posts containing "{{ query }}"</h1>
+     {% if Search %}
+       <h1>Posts containing "{{ Search }}"</h1>
        <h3>
 {% with results.count as total_results %}
 Found {{ total_results }} result{{ total_results|pluralize }}
@@ -11,13 +11,16 @@ Found {{ total_results }} result{{ total_results|pluralize }}
 {% for post in results %}
 <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></
 h4>
-{{ post.body|markdown|truncatewords_html:5 }}
+{{ post.body|truncatewords_html:5 }}
 {% empty %}
-<p>There are no results for your query.</p>
+<p>There are no results for your Search.</p>
 {% endfor %}
-<p><a href="{% url "search" %}">Search again</a></p> {% else %}
-<h1>Search for posts</h1> <form method="get">
-{{ form.as_p }}
-<input type="submit" value="Search"> </form>
+<p><a href="{% url 'card_maker:search' %}">Search again</a></p> {% else %}
+<h1><center>Search for Cards</center></h1> 
+<div>
+<form class="d-flex" method="get">
+	{{ form.as_h1 }}
+<input type="submit" class="form-control me-2" placeholder="Search" aria-label="Search"> <button class="btn btn-outline-success" type="submit">Search</button></form>
+</div>
      {% endif %}
    {% endblock %}

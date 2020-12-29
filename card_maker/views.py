@@ -76,14 +76,14 @@ def contact(request):
 
 def post_search(request): 
     form = SearchForm() 
-    query = None
+    Search = None
     results = []
-    if 'query' in request.GET:
+    if 'Search' in request.GET:
         form = SearchForm(request.GET) 
         if form.is_valid():
-            query = form.cleaned_data['query'] 
-            results = Post.published.annotate(search=SearchVector('title', 'body'), ).filter(search=query)
-    return render(request,'homepage.html', {'form': form,'query': query, 'results': results})
+            Search = form.cleaned_data['Search'] 
+            results = Post.published.annotate(search=SearchVector('title', 'body'), ).filter(search=Search)
+    return render(request,'search.html', {'form': form,'Search': Search, 'results': results})
 
 
 
